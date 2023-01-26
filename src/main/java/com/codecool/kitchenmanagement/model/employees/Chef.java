@@ -19,7 +19,7 @@ public class Chef extends Cooking {
     public void requestIngredient(IngredientTypes ingredientTypes) {
         try {
             kitchenService.requestIngredient(ingredientTypes);
-            shout("Thank you! (ingredient returned)");
+            shout("Thank you!");
         } catch (OutOfIngredientsException e) {
             shout("We're all out");
         }

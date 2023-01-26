@@ -2,10 +2,7 @@ package com.codecool.kitchenmanagement.model.employees;
 
 import com.codecool.kitchenmanagement.model.kitchenItems.IngredientTypes;
 
-import java.util.Date;
-import java.util.EnumMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class KitchenHelper extends Employee{
     private final Map<IngredientTypes, Integer> ingredients;
@@ -13,6 +10,7 @@ public class KitchenHelper extends Employee{
     public KitchenHelper(String name, double salary, Date birthDate) {
         super(name, birthDate, salary);
         ingredients = new EnumMap<>(IngredientTypes.class);
+        randomizeIngredients();
     }
 
     public Optional<IngredientTypes> giveIngredient(IngredientTypes ingredientTypes) {
@@ -23,4 +21,11 @@ public class KitchenHelper extends Employee{
         }
         return Optional.empty();
     }
+
+    private void randomizeIngredients() {
+        Arrays.stream(IngredientTypes.values()).toList().forEach(ingredientTypes -> {
+            ingredients.put(ingredientTypes, new Random().nextInt(0,1));
+        });
+    }
+
 }
