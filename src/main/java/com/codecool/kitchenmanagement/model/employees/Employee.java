@@ -1,4 +1,4 @@
-package com.codecool.kitchenmanagement.model;
+package com.codecool.kitchenmanagement.model.employees;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
