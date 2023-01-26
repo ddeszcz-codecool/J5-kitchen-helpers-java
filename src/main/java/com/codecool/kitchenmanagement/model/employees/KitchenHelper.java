@@ -2,7 +2,13 @@ package com.codecool.kitchenmanagement.model.employees;
 
 import com.codecool.kitchenmanagement.model.kitchenItems.IngredientTypes;
 
-import java.util.*;
+import java.util.Date;
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Arrays;
+import java.util.Optional;
+
 
 public class KitchenHelper extends Employee{
     private final Map<IngredientTypes, Integer> ingredients;
@@ -24,7 +30,7 @@ public class KitchenHelper extends Employee{
 
     private void randomizeIngredients() {
         Arrays.stream(IngredientTypes.values()).toList().forEach(ingredientTypes -> {
-            ingredients.put(ingredientTypes, new Random().nextInt(0,1));
+            ingredients.put(ingredientTypes, new Random().nextInt(1));
         });
     }
 

@@ -8,6 +8,6 @@ public enum IngredientTypes {
 
     public static IngredientTypes randomIngredient() {
         IngredientTypes[] ingredients =  IngredientTypes.values();
-        return ingredients[new Random().nextInt(0, ingredients.length)];
+        return ingredients[new Random().nextInt(ingredients.length)];
     }
 }

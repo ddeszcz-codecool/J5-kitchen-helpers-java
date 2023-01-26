@@ -25,4 +25,8 @@ public class KitchenService {
         }
         throw new OutOfIngredientsException();
     }
+
+    public void addHelper(KitchenHelper kitchenHelper) {
+        kitchenHelpers.add(kitchenHelper);
+    }
 }
